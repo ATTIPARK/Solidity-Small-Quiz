@@ -16,38 +16,14 @@
 						"internalType": "uint256",
 						"name": "b",
 						"type": "uint256"
-					}
-				],
-				"name": "Divide",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "c",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "pure",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "a",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "b",
-						"type": "uint256"
-					}
-				],
-				"name": "Minus",
+				"name": "add",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -69,9 +45,14 @@
 						"internalType": "uint256",
 						"name": "b",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "c",
+						"type": "uint256"
 					}
 				],
-				"name": "Multiply",
+				"name": "addAndMultiply",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -93,9 +74,14 @@
 						"internalType": "uint256",
 						"name": "b",
 						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "c",
+						"type": "uint256"
 					}
 				],
-				"name": "Plus",
+				"name": "multiply",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -120,7 +106,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/1_10.sol": "Quiz2"
+			"contracts/11_20.sol": "Quiz12"
 		},
 		"evmVersion": "paris",
 		"libraries": {},
@@ -134,12 +120,12 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/1_10.sol": {
-			"keccak256": "0x7b360c9b6a50d17e59e9bec66a64989f3a6c08d272e47d71eb9fe624d6321e5e",
+		"contracts/11_20.sol": {
+			"keccak256": "0x5339138de7a2e624eb9b2f20ca3c015a249722968438da3fb359aba05d8b616c",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://586899d85d56e0338cfd208a3cf84f06058e1ebe63ade5a4b0a876618d787da6",
-				"dweb:/ipfs/QmagoHfbzndfevx8Z8EyCqPeozVPvX7WoAUHmRpKxE6axB"
+				"bzz-raw://18e0815ae4f5b244b2a3abd558744daf28d99a3e3cee61263e35c35ba0143a5f",
+				"dweb:/ipfs/Qmd6qEZ5hB6GjFvEPU487vPUiHGrpeJorP3zfWv6yKK34m"
 			]
 		}
 	},

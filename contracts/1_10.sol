@@ -3,24 +3,8 @@ pragma solidity ^0.8.18;
 
 contract Quiz1 {
     // 더하기, 빼기, 곱하기, 나누기 그리고 제곱을 반환받는 계산기를 만드세요
-    function Plus(uint a, uint b) public pure returns(uint) {
-        return a+b;
-    }
-
-    function Minus(uint a, uint b) public pure returns(uint) {
-        return a-b;
-    }
-
-    function Multiply(uint a, uint b) public pure returns(uint) {
-        return a*b;
-    }
-
-    function Divide(uint a, uint b) public pure returns(uint) {
-        return a/b;
-    }
-
-    function Square(uint a) public pure returns(uint) {
-        return a**2;
+    function Calculator(uint a, uint b) public pure returns(uint, uint, uint, uint, uint) {
+        return (a+b, a-b, a*b, a/b, a**2);
     }
 }
 
