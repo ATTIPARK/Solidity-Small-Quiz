@@ -1,0 +1,70 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "num1",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "num2",
+						"type": "uint256"
+					}
+				],
+				"name": "subtract",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/21_30.sol": "Quiz22"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/21_30.sol": {
+			"keccak256": "0xeac15a67fbddd928ecbc5a1370a82e303d40f59aad121bb6a44585f18e38eba5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://205038d629b631b2e435a523701daae2f91cd5b63e953d4ab4a8687b96d1657b",
+				"dweb:/ipfs/QmdCxTswQCnYvEwqXLQNZH4JAwrjwtF42sc4Bt796YYhHF"
+			]
+		}
+	},
+	"version": 1
+}
