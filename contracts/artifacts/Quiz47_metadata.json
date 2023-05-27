@@ -4,7 +4,28 @@
 	},
 	"language": "Solidity",
 	"output": {
-		"abi": [],
+		"abi": [
+			{
+				"inputs": [],
+				"name": "changeOwner",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {},
@@ -33,11 +54,11 @@
 	},
 	"sources": {
 		"contracts/41_50.sol": {
-			"keccak256": "0x536bda762429713689a800b6d78d2b8d31e84460357c3c7f63a8e0c8baef7975",
+			"keccak256": "0x5b6fee1620edc11c4577f0e50e34b6177944f956e66adc2939c5d24db061666d",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://84a360db8ab260e327525b139e99d3e0d07b61d30864218eec8a588eefd65525",
-				"dweb:/ipfs/QmQ7DWMetKYEtHpscbD9T77BnbzLmwk2rQ8kx9Pn4ogDGf"
+				"bzz-raw://0be46aa7848f5414f1b82e1a886275073f57959a16fc7a54a6ae7eda9c635aac",
+				"dweb:/ipfs/QmaU1ngsgvdWsQKqyakkuwyhMzMog6dSU8kY7KnibeGiKJ"
 			]
 		}
 	},

@@ -6,44 +6,27 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [],
-				"name": "Guest",
-				"outputs": [
-					{
-						"internalType": "string",
-						"name": "name",
-						"type": "string"
-					},
-					{
-						"internalType": "uint256",
-						"name": "number",
-						"type": "uint256"
-					},
-					{
-						"internalType": "address",
-						"name": "addr",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
 				"inputs": [
 					{
-						"internalType": "string",
-						"name": "_name",
-						"type": "string"
+						"internalType": "uint256",
+						"name": "a",
+						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
-						"name": "_number",
+						"name": "b",
 						"type": "uint256"
 					}
 				],
-				"name": "setGuest",
-				"outputs": [],
-				"stateMutability": "nonpayable",
+				"name": "add",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "pure",
 				"type": "function"
 			}
 		],
@@ -60,7 +43,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/41_50.sol": "Quiz42"
+			"contracts/41_50.sol": "Quiz48_A"
 		},
 		"evmVersion": "paris",
 		"libraries": {},

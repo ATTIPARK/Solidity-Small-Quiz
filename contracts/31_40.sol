@@ -149,6 +149,21 @@ contract Quiz37 {
     최초의 배포자만이 해당 smart contract에서 자금을 회수할 수 있고 다른 이들은 못하게 막는 함수도 구현하세요.
     (힌트 : 기부는 EOA가 해당 Smart Contract에게 돈을 보내는 행위, contract가 돈을 받는 상황)
     */
+
+    address owner = msg.sender;
+
+    modifier isOwner {
+        require(owner == msg.sender);
+        _;
+    }
+
+    function walletToContract() public payable isOwner returns(uint) {
+        return msg.value;
+    }
+
+    function contractToWallet() public isOwner {
+        payable(owner).transfer(address(this).balance);
+    }
     
 }
 
@@ -162,12 +177,15 @@ contract Quiz38 {
     string public a = 'A';
     address owner = msg.sender;
 
-    function setAToB() public {
-        require(msg.sender == owner);
+    modifier isOwner {
+        require(owner == msg.sender);
+        _;
+    }
+
+    function setAToB() public isOwner {
         a = "B";
     }
-    function setAToC() public {
-        require(msg.sender == owner);
+    function setAToC() public isOwner {
         a = "C";
     }
 }

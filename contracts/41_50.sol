@@ -52,6 +52,29 @@ contract Quiz43{
     또한, 자신이 현재 얼마를 예치했는지도 볼 수 있는 함수 그리고 자신이 예치한만큼의 ether를 인출할 수 있는 기능을 구현하세요.
     힌트 : mapping을 꼭 이용하세요.
     */
+
+    mapping(address=>uint) bank;
+    address owner = msg.sender;
+
+    modifier isOwner {
+        require(owner == msg.sender);
+        _;
+    }
+
+    function deposit() public payable isOwner returns(uint) {
+        bank[msg.sender] += msg.value;
+        return msg.value;
+    }
+
+    function showMoney() public view isOwner returns(uint) {
+        return bank[msg.sender];
+    }
+
+    function getMoney(uint a) public isOwner {
+        a *= 10**18;
+        bank[msg.sender] -= a;
+        payable(owner).transfer(a);
+    }
 }
 
 contract Quiz44{
@@ -92,19 +115,52 @@ contract Quiz46{
     3의 배수이거나 10의 배수이면서 50보다 작은 수만 들어갈 수 있는 array를 구현하세요.
     (예 : 15 -> 가능, 2의 배수 // 40 -> 가능, 10의 배수이면서 50보다 작음 // 66 -> 가능, 3의 배수 // 70 -> 불가능 10의 배수이지만 50보다 큼)
     */
+    uint[] array;
+
+    function setArray(uint n) public {
+        require(n%3==0 || n%10==0 && n<50);
+        array.push(n);
+    }
+
+    function getArray() public view returns(uint[] memory) {
+        return array;
+    }
 }
 
 contract Quiz47{
     /*
     배포와 함께 배포자가 owner로 설정되게 하세요. owner를 바꿀 수 있는 함수도 구현하되 그 함수는 owner만 실행할 수 있게 해주세요.
     */
+
+    address public owner = msg.sender;
+
+    modifier isOwner {
+        require(owner == msg.sender);
+        _;
+    }
+
+    function changeOwner() public isOwner {
+        owner = msg.sender;
+    }
 }
 
-contract Quiz48{
+contract Quiz48_A{
     /*
     A라는 contract에는 2개의 숫자를 더해주는 함수를 구현하세요. 
     B라고 하는 contract를 따로 만든 후에 A의 더하기 함수를 사용하는 코드를 구현하세요.
     */
+
+    function add(uint a, uint b) public pure returns(uint) {
+        return a+b;
+    }
+}
+
+contract Quiz48_B {
+    Quiz48_A A = new Quiz48_A();
+
+    function addA(uint a, uint b) public view returns(uint) {
+        return A.add(a,b);
+    }
 }
 
 contract Quiz49{
@@ -112,6 +168,29 @@ contract Quiz49{
     긴 숫자를 넣었을 때, 마지막 3개의 숫자만 반환하는 함수를 구현하세요.
     예) 459273 → 273 // 492871 → 871 // 92218 → 218
     */
+    function getThreeNumber(uint _n) public pure returns(uint) {
+        uint n = _n;
+        uint count;
+        while(n!=0) {
+            n/=10;
+            count++;
+        }
+
+        uint[] memory numberToArray = new uint[](count);
+        n = _n;
+        uint _count = count;
+        while(n!=0) {
+            numberToArray[--_count] = n%10;
+            n/=10;
+        }
+
+        uint result;
+        for(uint i = 0; i < 3; i++) {
+            result += (numberToArray[--count] * 10**i); 
+        }
+
+        return result;
+    }
 }
 
 contract Quiz50{
@@ -120,4 +199,13 @@ contract Quiz50{
     예) 3,1,6 → 316 // 1,9,3 → 193 // 0,1,5 → 15 
     응용 문제 : 3개 아닌 n개의 숫자 이어붙이기
     */
+
+    function threeNumTogether(uint a, uint b, uint c) public pure returns(uint){
+        require(a<10 && b<10 && c<10);
+
+        uint result;
+        result = (a * 10**2) + (b * 10) + c;
+
+        return result;
+    }
 }
