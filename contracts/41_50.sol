@@ -139,8 +139,8 @@ contract Quiz47{
         _;
     }
 
-    function changeOwner() public isOwner {
-        owner = msg.sender;
+    function changeOwner(address a) public isOwner {
+        owner = a;
     }
 }
 
